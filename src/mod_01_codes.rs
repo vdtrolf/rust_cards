@@ -1,5 +1,7 @@
+use rust_cards::mod_utils::get_cardsfile_specs;
 use rust_cards::mod_utils::print_md_txt;
 use rust_cards::mod_utils::print_title;
+use rust_cards::mod_utils::read_cardsfile;
 
 static TITLE: &str = " 1-Variables";
 static EXP_TEXT: &str = "**static** > AAA:f32 = 3.45;
@@ -16,9 +18,14 @@ static EXP_TEXT: &str = "**static** > AAA:f32 = 3.45;
        > let (x1,x2,x3) = tup;";
 
 pub fn learn_cards_codes(show_all: bool) {
+    let cards_file_content: String = read_cardsfile("codes.md");
+    let cards_specs: rust_cards::mod_utils::CardsFileSpecs =
+        get_cardsfile_specs(&cards_file_content.as_str());
+
     if show_all {
         print_title(TITLE);
-        print_md_txt(EXP_TEXT);
+        println!("===> {} {}", cards_specs.cards_name, cards_specs.cards_type);
+        print_md_txt(&cards_file_content.as_str());
     } else {
         println!("{}", TITLE);
     }
