@@ -8,9 +8,13 @@ pub struct CardsFileSpecs {
 }
 
 pub fn print_md_txt(txt_md: &str) {
+    let mut is_text: bool = false;
     let parts = txt_md.split("\n");
     for l in parts {
-        print_line(l);
+        if is_text {
+            print_line(l);
+        }
+        is_text = true;
     }
     println!("");
 }
