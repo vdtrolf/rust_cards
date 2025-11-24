@@ -24,7 +24,7 @@ fn main() {
             "a" | "A" => print_welcome(),
             "0" | "q" | "Q" => break,
             "c" | "C" => learn_cards_codes(true),
-            "r" | "R" => learn_cards_rust(true),
+            "r" | "R" => learn_cards_rust(true),            
             _ => println!("No idea"),
         }
         println!("");
