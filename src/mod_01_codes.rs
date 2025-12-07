@@ -1,7 +1,5 @@
-use rust_cards::mod_files::get_cardsfile_specs;
-use rust_cards::mod_utils::print_md_txt;
-use rust_cards::mod_utils::print_title;
-use rust_cards::mod_files::read_cardsfile;
+use rust_cards::mod_files::{get_cardsfile_specs, read_cardsfile};
+use rust_cards::mod_utils::{print_md_txt, print_title};
 
 static TITLE: &str = " 1-Variables";
 
